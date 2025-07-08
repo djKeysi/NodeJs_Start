@@ -1,0 +1,25 @@
+npm init
+note-app
+This is simple NodeJs Application
+enter
+enter
+enter
+keywords: node,javascript
+author: Evgeniy Zenchenko <evgeniyzenchenko@gmail.com>
+enter
+enter
+
+npmjs.com->yargs
+npm i yargs
+
+rm -rf node_modules
+
+npm i @types/yargs
+
+Удали текущую версию
+ npm uninstall yargs 
+
+И установи предыдущую 
+npm install yargs@17.2.1 и небудет ругатся на command
+ 
+ node index add --help
