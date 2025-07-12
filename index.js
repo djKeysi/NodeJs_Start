@@ -1,6 +1,6 @@
 const yargs = require("yargs");
 const pkg = require("./package.json");
-const { addNote, printNotes } = require("./notes.controller");
+const { addNote, printNotes, removeNote } = require("./notes.controller");
 
 yargs.version(pkg.version);
 
@@ -27,6 +27,23 @@ yargs.command({
   async handler() {
     //console.log("List command");
     await printNotes();
+  },
+});
+
+yargs.command({
+  command: "remove",
+  describe: "Remove note by id",
+  builder: {
+    //типизация данных
+    id: {
+      type: "string",
+      describe: "Note uniq iq",
+      demandOption: true,
+    },
+  },
+  async handler({ id }) {
+    //console.log("List command");
+    removeNote(id);
   },
 });
 
